@@ -5,8 +5,8 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 
-var friction_y = 0.5;
-var gravity = 7;
+var friction_y = 0.4;
+var gravity = 0.4;
 
 function random_value (min, max) {
     return (Math.random()*(max-min))+min;
@@ -21,7 +21,7 @@ function random_color() {
 }
 
 
-function Circle (x, y, dx, dy, radius, friction_x, friction_y, gravity, stroke_color, fill_color) {
+function Circle (x, y, dx, dy, radius, friction_x, friction_y,gravity , stroke_color, fill_color) {
     this.x = x;
     this.y = y;
     this.dx = dx;
@@ -44,12 +44,12 @@ function Circle (x, y, dx, dy, radius, friction_x, friction_y, gravity, stroke_c
     }
 
     this.update = function () {
-        this.draw();
         this.x += this.dx;
-        this.y += this.dy * this.gravity;
+        this.y += this.dy;
+        this.dy *= this.gravity;
 
         if(!(this.y+this.radius < canvas.height)) {
-            this.dy = - (this.dy * this.friction_y);
+            this.dy = - this.dy;
         }
     }
 
@@ -62,7 +62,7 @@ function Circle (x, y, dx, dy, radius, friction_x, friction_y, gravity, stroke_c
     // }
 
 
-    var ball = new Circle(canvas.width/2,canvas.height/2,0,3,50,0,friction_y, gravity,"#000000","#000000");
+    var ball = new Circle(canvas.width/2,canvas.height/2,0,0.8,50,0,friction_y,gravity,"#000000","#000000");
     
 
 
