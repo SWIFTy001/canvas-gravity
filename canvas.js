@@ -33,9 +33,12 @@ function random_value (min, max) {
 //generates any color range of the hex range
 var numerals = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
 
+//Davina Chai - Coral Teal Gray
+var color_codes = ['#FF5F5D','#3F7C85','#00CCBF','#72F2EB','#747E7E']
+
 function random_color() {
-    return '#'+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)];
-    //return colors_array[Math.floor(random_value(0,5))];
+    //return '#'+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)]+numerals[Math.round(Math.random()*numerals.length)];
+    return color_codes[Math.floor(random_value(0,5))];
 }
 
 
