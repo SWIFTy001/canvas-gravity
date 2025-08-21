@@ -23,7 +23,7 @@ var gravity = 1;
 var radius;
 var velocity_x;
 var velocity_y = 2;
-var no_of_balls = 100;
+var no_of_balls = 400;
 
 function random_value (min, max) {
     return (Math.random()*(max-min))+min;
