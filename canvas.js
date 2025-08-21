@@ -47,10 +47,11 @@ function Circle (x, y, dx, dy, radius, friction_x, friction_y,gravity , stroke_c
     this.update = function () {
         this.x += this.dx;
         this.y += this.dy;
-        this.dy += this.gravity;
 
         if(this.y+this.radius >= canvas.height ) {
-            this.dy = - (this.dy * friction_y);
+            this.dy = - this.dy ;
+        }else{
+            this.dy += gravity;
         }
 
     }
