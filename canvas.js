@@ -5,7 +5,7 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 
-canvas.addEventListener("click",function () {
+addEventListener("click",function () {
     c.clearRect(0,0,innerWidth,innerHeight);
     init();
 
